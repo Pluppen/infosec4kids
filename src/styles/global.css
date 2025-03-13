@@ -4,137 +4,441 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+ /* Kids Theme CSS - Add to your Astro blog starter template */
+
+/* ===== Font Import ===== */
+/* Add to your head tag:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+*/
+
+/* ===== Base Theme Colors and Variables ===== */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-body {
-	font-family: 'Atkinson', sans-serif;
-	margin: 0;
+	/* Playful color palette */
+	--kids-primary: #FF6B6B;       /* Coral Red */
+	--kids-secondary: #4ECDC4;     /* Turquoise */
+	--kids-accent: #FFD166;        /* Amber */
+	--kids-highlight: #6A0572;     /* Purple */
+	--kids-background: #FFF9E6;    /* Soft Cream */
+	--kids-text: #333333;          /* Soft Black */
+	
+	/* Rounded corners and soft shadows */
+	--kids-radius: 15px;
+	--kids-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	
+	/* Typography */
+	--kids-heading-font: "Barriecito", system-ui;
+	--kids-body-font: "Inter", sans-serif;
+  }
+  
+  /* ===== Optional Full Page Theme ===== */
+  /* Add the .kids-theme class to your body or main container to apply the theme globally */
+  .kids-theme {
+	font-family: var(--kids-body-font);
+	background-color: var(--kids-background);
+	color: var(--kids-text);
+	line-height: 1.6;
+	background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='%23FFD166' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-attachment: fixed;
+  }
+  
+  /* ===== Typography Classes ===== */
+  /* Headings */
+  .kids-heading {
+	font-family: var(--kids-heading-font);
+	color: var(--kids-highlight);
+	margin-top: 1rem;
+	margin-bottom: 0.8rem;
+  }
+  
+  .kids-title {
+	font-family: var(--kids-heading-font);
+	font-size: 2.5rem;
+	text-align: center;
+	color: var(--kids-primary);
+	text-shadow: 3px 3px 0px rgba(255, 209, 102, 0.3);
+  }
+  
+  .kids-subtitle {
+	font-family: var(--kids-heading-font);
+	font-size: 2rem;
+	color: var(--kids-secondary);
+  }
+  
+  /* Text effects */
+  .kids-rainbow-text {
+	background: linear-gradient(to right, 
+	  #FF6B6B, #FF9E53, #FFD166, 
+	  #88D498, #4ECDC4, #6A0572);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: bold;
+  }
+  
+  .kids-bubble-text {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	background-color: white;
+	border-radius: 20px;
+	border: 3px solid var(--kids-accent);
+	position: relative;
+  }
+  
+  .kids-bubble-text::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 20px;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-right: 3px solid var(--kids-accent);
+	border-bottom: 3px solid var(--kids-accent);
+	transform: rotate(45deg);
+  }
+  
+  .kids-handwritten {
+	font-family: 'Comic Neue', cursive;
+	font-style: italic;
+	transform: rotate(-1deg);
+	display: inline-block;
+  }
+  
+  /* ===== Container Classes ===== */
+  .kids-card {
+	background-color: white;
+	border-radius: var(--kids-radius);
+	box-shadow: var(--kids-shadow);
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	border: 3px solid var(--kids-accent);
+	transition: transform 0.3s ease;
+  }
+  
+  .kids-card:hover {
+	transform: translateY(-5px);
+  }
+  
+  .kids-dashed-box {
+	border: 3px dashed var(--kids-primary);
+	border-radius: var(--kids-radius);
+	padding: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .kids-cloud {
+	background-color: white;
+	border-radius: 50px;
+	padding: 2rem;
+	position: relative;
+	box-shadow: var(--kids-shadow);
+  }
+  
+  .kids-cloud::before,
+  .kids-cloud::after {
+	content: '';
+	position: absolute;
+	background-color: white;
+	border-radius: 50%;
+  }
+  
+  .kids-cloud::before {
+	width: 50px;
+	height: 50px;
+	top: -20px;
+	left: 30px;
+  }
+  
+  .kids-cloud::after {
+	width: 70px;
+	height: 70px;
+	top: -10px;
+	left: 80px;
+  }
+  
+  /* ===== Navigation Classes ===== */
+  .kids-nav {
+	background-color: var(--kids-primary);
+	padding: 1rem;
+	border-radius: 0 0 var(--kids-radius) var(--kids-radius);
+	box-shadow: var(--kids-shadow);
+  }
+  
+  .kids-nav ul {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	list-style: none;
 	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
+	margin: 0;
+  }
+  
+  .kids-nav a {
+	color: white;
+	font-family: var(--kids-heading-font);
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	border-radius: var(--kids-radius);
+	text-decoration: none;
+	transition: all 0.3s ease;
+  }
+  
+  .kids-nav a:hover {
+	background-color: var(--kids-accent);
+	color: var(--kids-text);
+	transform: scale(1.1);
+  }
+  
+  /* ===== Button Classes ===== */
+  .kids-button {
+	background-color: var(--kids-secondary);
+	color: white;
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
+	padding: 0.8rem 1.5rem;
+	border-radius: var(--kids-radius);
+	font-family: var(--kids-heading-font);
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	display: inline-block;
+  }
+  
+  .kids-button:hover {
+	background-color: var(--kids-primary);
+	transform: translateY(-3px);
+	box-shadow: 0 7px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .kids-button:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .kids-button-primary {
+	background-color: var(--kids-primary);
+  }
+  
+  .kids-button-accent {
+	background-color: var(--kids-accent);
+	color: var(--kids-text);
+  }
+  
+  /* ===== Badge Classes ===== */
+  .kids-badge {
+	display: inline-block;
+	background-color: var(--kids-accent);
+	color: var(--kids-text);
+	font-weight: bold;
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	margin-right: 0.5rem;
+	font-size: 0.9rem;
+	font-family: var(--kids-body-font);
+  }
+  
+  .kids-badge-primary {
+	background-color: var(--kids-primary);
+	color: white;
+  }
+  
+  .kids-badge-secondary {
+	background-color: var(--kids-secondary);
+	color: white;
+  }
+  
+  /* ===== Link Classes ===== */
+  .kids-link {
+	color: var(--kids-highlight);
+	text-decoration: none;
+	position: relative;
+	transition: all 0.3s ease;
+	font-weight: bold;
+  }
+  
+  .kids-link:hover {
+	color: var(--kids-primary);
+  }
+  
+  .kids-link:hover::after {
+	content: "✨";
+	position: absolute;
+	margin-left: 5px;
+	animation: sparkle 0.8s infinite;
+  }
+  
+  @keyframes sparkle {
+	0%, 100% { opacity: 0.5; transform: scale(0.8); }
+	50% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  /* ===== Image Classes ===== */
+  .kids-image {
+	border-radius: var(--kids-radius);
+	border: 5px solid white;
+	box-shadow: var(--kids-shadow);
+  }
+  
+  .kids-book-cover {
+	position: relative;
+	display: inline-block;
+	margin: 1rem;
+  }
+  
+  .kids-book-cover::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: var(--kids-radius);
+	transform: rotate(3deg);
+	z-index: -1;
+  }
+  
+  /* ===== Grid Classes ===== */
+  .kids-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 2rem;
+	margin: 2rem 0;
+  }
+  
+  /* ===== Animation Classes ===== */
+  @keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+  }
+  
+  .kids-float {
+	animation: float 5s ease-in-out infinite;
+  }
+  
+  @keyframes wiggle {
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(3deg); }
+	75% { transform: rotate(-3deg); }
+  }
+  
+  .kids-wiggle:hover {
+	animation: wiggle 0.5s ease-in-out;
+  }
+  
+  @keyframes bounce {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-15px); }
+  }
+  
+  .kids-bounce {
+	animation: bounce 1s ease-in-out infinite;
+  }
+  
+  /* ===== Responsive Adjustments ===== */
+  @media (max-width: 768px) {
+	.kids-nav ul {
+	  flex-direction: column;
+	  align-items: center;
+	  gap: 0.8rem;
 	}
-	main {
-		padding: 1em;
+	
+	.kids-title {
+	  font-size: 2rem;
 	}
-}
+	
+	.kids-subtitle {
+	  font-size: 1.5rem;
+	}
+	
+	.kids-grid {
+	  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+  }
+  
+  /* ===== Footer Classes ===== */
+  .kids-footer {
+	background-color: var(--kids-highlight);
+	color: white;
+	padding: 2rem;
+	text-align: center;
+	border-radius: var(--kids-radius) var(--kids-radius) 0 0;
+	margin-top: 3rem;
+	box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kids-footer a {
+	color: var(--kids-accent);
+  }
+  
+  /* ===== Utility Classes ===== */
+  .kids-text-center {
+	text-align: center;
+  }
+  
+  .kids-rounded {
+	border-radius: var(--kids-radius);
+  }
+  
+  .kids-shadow {
+	box-shadow: var(--kids-shadow);
+  }
+  
+  .kids-p-1 {
+	padding: 0.5rem;
+  }
+  
+  .kids-p-2 {
+	padding: 1rem;
+  }
+  
+  .kids-p-3 {
+	padding: 1.5rem;
+  }
+  
+  .kids-m-1 {
+	margin: 0.5rem;
+  }
+  
+  .kids-m-2 {
+	margin: 1rem;
+  }
+  
+  .kids-m-3 {
+	margin: 1.5rem;
+  }
+  
+  .kids-text-primary {
+	color: var(--kids-primary);
+  }
+  
+  .kids-text-secondary {
+	color: var(--kids-secondary);
+  }
+  
+  .kids-text-accent {
+	color: var(--kids-accent);
+  }
+  
+  .kids-bg-primary {
+	background-color: var(--kids-primary);
+	color: white;
+  }
+  
+  .kids-bg-secondary {
+	background-color: var(--kids-secondary);
+	color: white;
+  }
+  
+  .kids-bg-accent {
+	background-color: var(--kids-accent);
+	color: var(--kids-text);
+  }
 
 .sr-only {
 	border: 0;
