@@ -1,6 +1,6 @@
 ---
 title: 'Ellas IT-äventyr'
-description: 'Ellas IT-äventyr mot farliga länkar på internet.'
+description: 'Grundläggande introduktion till IT-säkerhet genom en berättelse där Ella lär sig att inte klicka på misstänkta popup-fönster. Fröken Lisa förklarar internet som en stor stad med både bra och dåliga platser, och varför man måste vara försiktig.'
 pubDate: 'Mar 13 2025'
 heroImage: '/blog-placeholder-3.jpg'
 ---

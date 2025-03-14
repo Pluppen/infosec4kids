@@ -1,6 +1,6 @@
 ---
 title: 'Ellas hemliga dagbok - Om rätten till privatliv'
-description: 'Ellas hemliga dagbok - om rätten till privatliv och integritet'
+description: 'Fröken Lisa använder en dagbok som metafor för att förklara vikten av personlig integritet. Klassen lär sig att privatliv inte handlar om att dölja något negativt, utan om att skydda något värdefullt.'
 pubDate: 'Mar 13 2025'
 heroImage: '/blog-placeholder-3.jpg'
 ---

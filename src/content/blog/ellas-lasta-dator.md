@@ -1,6 +1,6 @@
 ---
 title: 'Ellas låsta dator'
-description: 'Ellas äventyr mot den låsta datorn.'
+description: 'Berättelsen förklarar ransomware genom en incident där skolans dator blir låst. Ella och klassen lär sig vad ransomware är, hur det fungerar, och viktiga skyddsåtgärder som säkerhetskopiering.'
 pubDate: 'Mar 13 2025'
 heroImage: '/blog-placeholder-3.jpg'
 ---
