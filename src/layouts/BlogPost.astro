@@ -7,10 +7,14 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
+import {getLangFromUrl} from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
@@ -55,6 +59,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body class="kids-theme">
+        <Header />
 		<main>
 			<article>
 				<div class="prose">

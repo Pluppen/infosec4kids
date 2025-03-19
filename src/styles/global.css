@@ -33,6 +33,11 @@
 	--kids-heading-font: "Barriecito", system-ui;
 	--kids-body-font: "Inter", sans-serif;
   }
+
+  body {
+      padding: 0;
+      margin: 0;
+  }
   
   /* ===== Optional Full Page Theme ===== */
   /* Add the .kids-theme class to your body or main container to apply the theme globally */

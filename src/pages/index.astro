@@ -14,31 +14,10 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-		</style>
+        <BaseHead title={"InfoSäk för barn / InfoSec For Kids"} description={"IT-Säkerhet beskrivet genom olika barnberättelser för att barn ska få en förståelse men även ibland då det är lättare som vuxen på det sättet."} />
+        <meta http-equiv="refresh" content="0;url=/sv/" />
 	</head>
 	<body class="kids-theme">
-		<main>
-			<section>
-				<ul class="kids-grid">
-					{
-						posts.map((post) => (
-							<li class="kids-card">
-									<h4 class="kids-subtitle">{post.data.title}</h4>
-									<p>{post.data.description}</p>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<a class="kids-button" href={`/blog/${post.id}/`}>
-										Läs Historia
-									</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
 		<Footer />
 	</body>
 </html>
